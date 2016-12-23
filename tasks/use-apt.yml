@@ -35,7 +35,7 @@
 # Install PHP7 packages.
 - name: Install PHP Packages
   become: true
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   with_nested: "{{ apt_php_packages }}"
   when: apt_php_packages is defined
   notify:
