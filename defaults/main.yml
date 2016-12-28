@@ -41,6 +41,6 @@ yum_php_packages:
   #- php70u-pear
 
 # need use 'www-data' on Debian8.
-php_owner: nginx
-php_group: nginx
+php_owner: 'www-data'
+php_group: 'www-data'
 
