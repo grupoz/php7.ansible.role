@@ -54,8 +54,8 @@ Available variables are listed below, along with default values (see `defaults/m
       #- php70u-pear
     
     # need use 'www-data' on Debian8.
-    php_owner: nginx
-    php_group: nginx
+    php_owner: 'www-data'
+    php_group: 'www-data'
 
 ### Note
 
