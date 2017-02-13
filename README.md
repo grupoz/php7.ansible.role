@@ -22,6 +22,7 @@ Available variables are listed below, along with default values (see `defaults/m
     php_upload_max_filesize: "20M"
     php_post_max_size: "20M"
     php_memory_limit: "1024M"
+    php_upload_tmp_dir: "/php/cache/upload_tmp"
     
     # Debian & Ubuntu.
     debian_php7_apt_repo: "http://packages.dotdeb.org"
