@@ -85,7 +85,7 @@
 - name: Change upload_tmp_dir path
   lineinfile: dest=/etc/php.ini
               regexp='upload_tmp_dir(\s)?='
-              line='upload_tmp_dir=/php/cache/upload_tmp'
+              line='upload_tmp_dir={{ php_upload_tmp_dir }}'
   notify: restart php7-fpm on centos
 
 - name: Exclude potentially harmfull php functions
