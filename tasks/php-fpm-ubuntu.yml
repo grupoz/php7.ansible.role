@@ -48,6 +48,7 @@
               regexp='allow_url_fopen(\s)?='
               line='allow_url_fopen = Off'
   notify: restart php7-fpm
+  when: disable_url_fopen|bool
 
 - name: Change soap.wsdl_cache_dir to new directory
   lineinfile: dest=/etc/php/7.0/fpm/php.ini

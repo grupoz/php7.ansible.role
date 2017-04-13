@@ -45,3 +45,7 @@ yum_php_packages:
 php_owner: 'www-data'
 php_group: 'www-data'
 
+disabled_functions: exec,passthru,shell_exec,system,proc_open,popen
+disable_url_fopen: true
+main_socket: unix:/run/php-fpm/www.sock
+
