@@ -2,6 +2,8 @@
 ---
 
 # All.
+debug_mode: false
+
 php_disable_functions: "exec,passthru,shell_exec,system,proc_open,popen"
 php_timezone: "Asia/Taipei"
 php_upload_max_filesize: "20M"

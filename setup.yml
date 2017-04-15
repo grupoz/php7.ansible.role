@@ -11,6 +11,14 @@
     - chusiang.vim-and-vi-mode
 
   tasks:
+    - name: rename hostname
+      hostname: 
+        name: "{{ ansible_distribution|lower }}-{{ ansible_distribution_version }}"
+      when:
+        - ansible_virtualization_type != 'docker'
+        - debug_mode == true
+      tags: debug
+
     - name: include vars for debian
       include_vars: "vars/debian.yml"
       when: ansible_distribution|lower == "debian"
