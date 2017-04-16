@@ -1,7 +1,8 @@
 #!/usr/bin/env ansible-playbook
-## vim:ft=ansible :
-
 ---
+
+- debug: msg="==> Setting php-cli on Debian"
+
 - name: Ensure timezone is set in cli php.ini
   lineinfile: dest=/etc/php/{{ apt_php_version }}/cli/php.ini
               regexp='date.timezone ='
@@ -11,3 +12,5 @@
   lineinfile: dest=/etc/php/{{ apt_php_version }}/cli/php.ini
               regexp=';?opcache.enable_cli='
               line='opcache.enable_cli=1'
+
+# vim:ft=ansible :

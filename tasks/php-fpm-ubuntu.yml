@@ -1,7 +1,7 @@
 #!/usr/bin/env ansible-playbook
 ---
 
-- debug: msg="==> Setting  PHP7 configure"
+- debug: msg="==> Setting php-fpm on Debian system"
 
 - name: Set permissions on socket - owner
   lineinfile: >

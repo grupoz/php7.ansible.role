@@ -2,7 +2,7 @@
 
 ---
 
-- debug: msg="==> Setting PHP7 configure on CentOS system"
+- debug: msg="==> Setting phg-fpm on CentOS system"
 
 # Setting  PHP7.
 - name: create socket directory for ceotns 6
