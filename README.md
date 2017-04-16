@@ -17,46 +17,68 @@ None.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    # All.
-    php_timezone: Asia/Taipei
-    php_upload_max_filesize: "20M"
-    php_post_max_size: "20M"
-    php_memory_limit: "1024M"
-    php_upload_tmp_dir: "/php/cache/upload_tmp"
-    
-    # Debian & Ubuntu.
-    debian_php7_apt_repo: "http://packages.dotdeb.org"
-    debian_php7_apt_key: "https://www.dotdeb.org/dotdeb.gpg"
-    ubuntu_php7_ppa_repo: "ppa:ondrej/php"
-    
-    apt_php_packages:
-      - php7.0
-      - php7.0-cgi
-      - php7.0-cli
-      - php7.0-common
-      - php7.0-curl
-      - php7.0-fpm
-      - php7.0-gd
-      - php7.0-intl
-      - php7.0-json
-      - php7.0-mysql
-      #- php7.0-pear
-    
-    yum_php_packages:
-      - php70u-cli
-      - php70u-common
-      - php70u-fpm
-      - php70u-fpm-nginx
-      - php70u-json
-      - php70u-mysqlnd
-      - php70u-opcache
-      - php70u-pdo
-      #- php70u-mbstring
-      #- php70u-pear
-    
-    # need use 'www-data' on Debian8.
-    php_owner: 'www-data'
-    php_group: 'www-data'
+```
+#######
+# All #
+#######
+
+# just for debug.
+debug_mode: false
+
+# allow_url_fopen
+#   Default Value: On
+php_allow_url_fopen: "Off"
+
+php_disable_functions: "exec,passthru,shell_exec,system,proc_open,popen"
+php_memory_limit: "1024M"
+php_post_max_size: "20M"
+php_timezone: "Asia/Taipei"
+php_upload_max_filesize: "20M"
+php_upload_tmp_dir: "/php/cache/upload_tmp"
+
+# Note: we need use 'www-data' on Debian 8.
+php_owner: 'www-data'
+php_group: 'www-data'
+
+###################
+# Debian & Ubuntu #
+###################
+
+debian_php7_apt_repo: "http://packages.dotdeb.org"
+debian_php7_apt_key: "https://www.dotdeb.org/dotdeb.gpg"
+ubuntu_php7_ppa_repo: "ppa:ondrej/php"
+
+apt_php_packages:
+  - php7.0
+  - php7.0-cgi
+  - php7.0-cli
+  - php7.0-common
+  - php7.0-curl
+  - php7.0-fpm
+  - php7.0-gd
+  - php7.0-intl
+  - php7.0-json
+  - php7.0-mysql
+  #- php7.0-pear
+
+##########
+# CentOS #
+##########
+
+yum_php_packages:
+  - php70u-cli
+  - php70u-common
+  - php70u-fpm
+  - php70u-fpm-nginx
+  - php70u-json
+  - php70u-mysqlnd
+  - php70u-opcache
+  - php70u-pdo
+  #- php70u-mbstring
+  #- php70u-pear
+
+main_socket: unix:/run/php-fpm/www.sock
+```
 
 ### Note
 
@@ -88,7 +110,7 @@ Available variables are listed below, along with default values (see `defaults/m
 
 None.
 
-> By the way, if you need to setup nginx, you can use [williamyeh.nginx](https://galaxy.ansible.com/williamyeh/nginx/) role.
+> If you need to setup nginx, you can use the [williamyeh.nginx](https://galaxy.ansible.com/williamyeh/nginx/) role.
 
 ## Example Playbook
 
@@ -119,4 +141,4 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ## License
 
-Copyright (c) chusiang from 2016 under the MIT license.
+Copyright (c) chusiang from 2016-2017 under the MIT license.

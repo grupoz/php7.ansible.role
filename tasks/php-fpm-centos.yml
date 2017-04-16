@@ -69,19 +69,11 @@
               line='session.use_strict_mode = 1'
   notify: restart php7-fpm on centos
 
-- name: Disable url fopen
+- name: Setting allow_url_fopen
   lineinfile: dest=/etc/php.ini
               regexp='allow_url_fopen(\s)?='
-              line='allow_url_fopen = Off'
+              line='allow_url_fopen = {{ php_allow_url_fopen }}'
   notify: restart php7-fpm on centos
-  when: disable_url_fopen|bool
-
-- name: Enable url fopen
-  lineinfile: dest=/etc/php.ini
-              regexp='allow_url_fopen(\s)?='
-              line='allow_url_fopen = On'
-  notify: restart php7-fpm on centos
-  when: disable_url_fopen|bool == false
 
 - name: Change soap.wsdl_cache_dir to new directory
   lineinfile: dest=/etc/php.ini
