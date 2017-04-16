@@ -60,6 +60,8 @@ yum_php_packages:
   #- php70u-mbstring
   #- php70u-pear
 
-main_socket: unix:/run/php-fpm/www.sock
+# PHP-FPM FastCGI.
+centos_php_fastcgi_listen: "/run/php-fpm/www.sock"
+centos_nginx_fastcgi_server: "unix:{{ centos_php_fastcgi_listen }}"
 
-## vim:ft=ansible :
+# vim:ft=ansible :

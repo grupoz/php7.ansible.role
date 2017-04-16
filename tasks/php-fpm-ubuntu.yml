@@ -86,3 +86,4 @@
               line='memory_limit = {{ php_memory_limit }}'
   notify: restart php7-fpm
 
+# vim:ft=ansible :
