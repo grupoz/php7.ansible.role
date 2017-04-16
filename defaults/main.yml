@@ -4,6 +4,7 @@
 debug_mode: false
 
 # All.
+php_allow_url_fopen: "Off"
 php_disable_functions: "exec,passthru,shell_exec,system,proc_open,popen"
 php_memory_limit: "1024M"
 php_post_max_size: "20M"
@@ -46,7 +47,6 @@ yum_php_packages:
 php_owner: 'www-data'
 php_group: 'www-data'
 
-disable_url_fopen: true
 main_socket: unix:/run/php-fpm/www.sock
 
 ## vim:ft=ansible :
