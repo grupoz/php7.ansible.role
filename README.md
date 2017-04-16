@@ -77,7 +77,9 @@ yum_php_packages:
   #- php70u-mbstring
   #- php70u-pear
 
-main_socket: unix:/run/php-fpm/www.sock
+# PHP-FPM FastCGI.
+centos_php_fastcgi_listen: "/run/php-fpm/www.sock"
+centos_nginx_fastcgi_server: "unix:{{ centos_php_fastcgi_listen }}"
 ```
 
 ### Note
@@ -138,7 +140,11 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
     Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
         with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
     
-
 ## License
 
-Copyright (c) chusiang from 2016-2017 under the MIT license.
+MIT License (2015 - 2017). See the [LICENSE file](LICENSE) for details.
+
+## Author Information
+
+1. [itcraftsmanpl (Arkadiusz Kondas)](http://itcraftsman.pl/)
+1. [chusiang (Chu-Siang Lai)](http://note.drx.tw)
