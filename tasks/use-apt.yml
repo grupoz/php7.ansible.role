@@ -1,14 +1,10 @@
 #!/usr/bin/env ansible-playbook
-# vim:ft=ansible :
-
 ---
 
 # before install.
-- name: Install requires packages
+- name: install requires package for use apt module
   become: true
-  apt: name={{ item }} state=present
-  with_items:
-    - python-apt
+  apt: name=python-apt state=present
 
 - name: Add third-party repository for Debian
   become: true
@@ -41,3 +37,4 @@
   notify:
     - restart php7-fpm
 
+# vim:ft=ansible :
