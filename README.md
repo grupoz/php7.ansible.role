@@ -48,34 +48,40 @@ debian_php7_apt_repo: "http://packages.dotdeb.org"
 debian_php7_apt_key: "https://www.dotdeb.org/dotdeb.gpg"
 ubuntu_php7_ppa_repo: "ppa:ondrej/php"
 
+apt_php_version: "7.0"
+#apt_php_version: "7.1"
+
 apt_php_packages:
-  - php7.0
-  - php7.0-cgi
-  - php7.0-cli
-  - php7.0-common
-  - php7.0-curl
-  - php7.0-fpm
-  - php7.0-gd
-  - php7.0-intl
-  - php7.0-json
-  - php7.0-mysql
-  #- php7.0-pear
+  - php{{ apt_php_version }}
+  - php{{ apt_php_version }}-cgi
+  - php{{ apt_php_version }}-cli
+  - php{{ apt_php_version }}-common
+  - php{{ apt_php_version }}-curl
+  - php{{ apt_php_version }}-fpm
+  - php{{ apt_php_version }}-gd
+  - php{{ apt_php_version }}-intl
+  - php{{ apt_php_version }}-json
+  - php{{ apt_php_version }}-mysql
+  #- php{{ apt_php_version }}-pear
 
 ##########
 # CentOS #
 ##########
 
+yum_php_version: "70u"
+#yum_php_version: "71w"
+
 yum_php_packages:
-  - php70u-cli
-  - php70u-common
-  - php70u-fpm
-  - php70u-fpm-nginx
-  - php70u-json
-  - php70u-mysqlnd
-  - php70u-opcache
-  - php70u-pdo
-  #- php70u-mbstring
-  #- php70u-pear
+  - php{{ yum_php_version }}-cli
+  - php{{ yum_php_version }}-common
+  - php{{ yum_php_version }}-fpm
+  - php{{ yum_php_version }}-fpm-nginx
+  - php{{ yum_php_version }}-json
+  - php{{ yum_php_version }}-mysqlnd
+  - php{{ yum_php_version }}-opcache
+  - php{{ yum_php_version }}-pdo
+ #- php{{ yum_php_version }}-mbstring
+ #- php{{ yum_php_version }}-pear
 
 # PHP-FPM FastCGI.
 centos_php_fastcgi_listen: "/run/php-fpm/www.sock"
