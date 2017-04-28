@@ -11,6 +11,11 @@ debug_mode: false
 # allow_url_fopen
 #   Default Value: On
 php_allow_url_fopen: "Off"
+php_opcache_enable: 1
+php_opcache_revalidate_freq: 0
+php_session_cookie_httponly: 1
+php_session_use_strict_mode: 1
+php_soap_wdsl_cache_dir: '/php/cache/wsdl'
 
 php_disable_functions: "exec,passthru,shell_exec,system,proc_open,popen"
 php_memory_limit: "1024M"
