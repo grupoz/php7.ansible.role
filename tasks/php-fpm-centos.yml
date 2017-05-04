@@ -29,7 +29,7 @@
   notify: restart php7-fpm on centos
 
 - name: Set permissions on socket - group
-  lineinfile: "dest=/etc/php-fpm.d/www.conf state=present regexp='^;?listen.group' line='listen.group = {{ php_group}}'"
+  lineinfile: "dest=/etc/php-fpm.d/www.conf state=present regexp='^;?listen.group' line='listen.group = {{ php_group }}'"
   notify: restart php7-fpm on centos
 
 - name: Set permissions on socket - mode
@@ -44,10 +44,10 @@
     group: root
     mode: 644
 
-- name: Set up php.ini
+- name: Set the php.ini
   template:
-    src: php.ini
-    dest: /etc/
+    src: templates/php.ini.centos.j2
+    dest: /etc/php.ini
     owner: root
     group: root
     mode: 644
