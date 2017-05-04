@@ -12,7 +12,7 @@
 - name: Disable port listen
   lineinfile: >
     dest=/etc/php-fpm.d/www.conf
-    state=present regexp='^;?listen = 127.0.0.1:9000'
+    state=present regexp='^listen = 127.0.0.1:9000'
     line=';listen = 127.0.0.1:9000'
   notify: restart php7-fpm on centos
 
