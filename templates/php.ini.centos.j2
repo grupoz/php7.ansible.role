@@ -1612,6 +1612,17 @@ ldap.max_links = -1
 [dba]
 ;dba.default_handler=
 
+[opcache]
+; Determines if Zend OPCache is enabled
+;   Default Value: 0
+opcache.enable={{ php_opcache_enable }}
+
+; How often (in seconds) to check file timestamps for changes to the shared
+; memory storage allocation. ("1" means validate once per second, but only
+; once per request. "0" means always validate)
+;   Default Value: 2
+opcache.revalidate_freq={{ php_opcache_revalidate_freq }}
+
 [curl]
 ; A default value for the CURLOPT_CAINFO option. This is required to be an
 ; absolute path.
@@ -1638,5 +1649,3 @@ ldap.max_links = -1
 ; Local Variables:
 ; tab-width: 4
 ; End:
-opcache.enable=1
-opcache.revalidate_freq=0
