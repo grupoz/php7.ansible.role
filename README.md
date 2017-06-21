@@ -142,8 +142,8 @@ This repository contains Dockerized [Ansible](https://github.com/ansible/ansible
 
 ### Images
 
-* chusiang/php7:ubuntu14.04 (lastest)
-* chusiang/php7:centos6
+* `chusiang/php7:ubuntu14.04` (lastest)
+* `chusiang/php7:centos6`
 
 ### Usage
 
