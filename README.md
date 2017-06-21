@@ -2,12 +2,20 @@
 
 [![Build Status](https://travis-ci.org/chusiang/php7.ansible.role.svg?branch=master)](https://travis-ci.org/chusiang/php7.ansible.role) [![Ansible Galaxy](https://img.shields.io/badge/role-php7-blue.svg)](https://galaxy.ansible.com/chusiang/php7/) [![Docker Hub](https://img.shields.io/badge/docker-php7-blue.svg)](https://hub.docker.com/r/chusiang/php7/) [![](https://images.microbadger.com/badges/image/chusiang/php7.svg)](https://microbadger.com/images/chusiang/php7 "Get your own image badge on microbadger.com")
 
-An Ansible role of Deploy PHP 7 (php-fpm) for nginx on CentOS, Debian, and Ubuntu. (forked from [itcraftsmanpl.php7](https://galaxy.ansible.com/itcraftsmanpl/php7/))
+An Ansible role of Deploy PHP 7 (php-fpm) for Nginx. (forked from [itcraftsmanpl.php7](https://galaxy.ansible.com/itcraftsmanpl/php7/))
 
 * Current PHP7 version:
 
  * Debian & Ubuntu: **7.0.6**
  * CentOS: **7.0.5**
+
+* Support Linux distributions:
+
+ 1. Ubuntu 14.04 (trusty)
+ 1. Debian 8 (jessie)
+ 1. Debian 9 (stretch)
+ 1. CentOS 6
+ 1. CentOS 7  
 
 ## Requirements
 
