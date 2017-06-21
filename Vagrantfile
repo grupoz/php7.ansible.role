@@ -31,6 +31,16 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  # Debian 9
+  config.vm.define "debian9" do |node|
+    node.vm.box = "debian/stretch64"
+    node.vm.hostname = "debian9.php7.local"
+    node.vm.provision "ansible" do |ansible|
+      ansible.playbook = "setup.yml"
+      ansible.sudo = true
+    end
+  end
+
   # CentOS 6.7
   config.vm.define "centos6" do |node|
     node.vm.box = "bento/centos-6.7"
