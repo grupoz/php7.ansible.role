@@ -68,7 +68,7 @@ ubuntu_php7_ppa_repo: "ppa:ondrej/php"
 #
 #  true: use the official repository.
 #  false: use the third-party repository.
-apt_php_official_repo: false
+apt_php_third_party_repo: true
 
 apt_php_version: "7.0"
 #apt_php_version: "7.1"
@@ -136,7 +136,10 @@ centos_nginx_fastcgi_server: "unix:{{ centos_php_fastcgi_listen }}"
          * `/etc/php.ini`
      * Socket: `/run/php-fpm/www.sock`
 
-1. We add `apt_php_official_repo `variable for enable or disable the third-party repository (after v1.3.6).
+1. We add `apt_php_third_party_repo `variable for enable or disable the third-party repository (after v1.3.6).
+
+ * `true`: use the third-party repository.
+ * `false`: use the debian / ubuntu official repository.
 
 ## Dependencies
 
