@@ -64,6 +64,12 @@ debian_php7_apt_repo: "http://packages.dotdeb.org"
 debian_php7_apt_key: "https://www.dotdeb.org/dotdeb.gpg"
 ubuntu_php7_ppa_repo: "ppa:ondrej/php"
 
+# A switch for use official apt repository.
+#
+#  true: use the official repository.
+#  false: use the third-party repository.
+apt_php_official_repo: false
+
 apt_php_version: "7.0"
 #apt_php_version: "7.1"
 
@@ -130,6 +136,8 @@ centos_nginx_fastcgi_server: "unix:{{ centos_php_fastcgi_listen }}"
          * `/etc/php.ini`
      * Socket: `/run/php-fpm/www.sock`
 
+1. We add `apt_php_official_repo `variable for enable or disable the third-party repository (after v1.3.6).
+
 ## Dependencies
 
 None.
@@ -142,7 +150,7 @@ None.
       roles:
         - { role: chusiang.php7 }
 
-## Docker Container
+## Docker Containers
 
 This repository contains Dockerized [Ansible](https://github.com/ansible/ansible), published to the public [Docker Hub](https://hub.docker.com/) via **automated build** mechanism.
 
@@ -170,3 +178,4 @@ MIT License (2015 - 2017). See the [LICENSE file](LICENSE) for details.
 
 1. [itcraftsmanpl (Arkadiusz Kondas)](http://itcraftsman.pl/)
 1. [chusiang (Chu-Siang Lai)](http://note.drx.tw)
+
