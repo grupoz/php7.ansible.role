@@ -39,6 +39,12 @@ debian_php7_apt_repo: "http://packages.dotdeb.org"
 debian_php7_apt_key: "https://www.dotdeb.org/dotdeb.gpg"
 ubuntu_php7_ppa_repo: "ppa:ondrej/php"
 
+# A switch for enable or disable the third-party repository.
+#
+#  true: use the official repository.
+#  false: use the third-party repository.
+apt_php_official_repo: false
+
 apt_php_version: "7.0"
 #apt_php_version: "7.1"
 
