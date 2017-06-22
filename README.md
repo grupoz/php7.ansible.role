@@ -114,23 +114,23 @@ centos_nginx_fastcgi_server: "unix:{{ centos_php_fastcgi_listen }}"
 
 1. If you see some error message, maybe you need modify `php_owner` and `php_group` from **nginx** to **www-data**.
 
- * Browser:
+   * Browser:
 
      > `An error occurred.`
 
- * error.log:
+   * error.log:
 
      > `connect() to unix:/var/run/php/php7.0-fpm.sock failed (13: Permission denied) while connecting to upstream ...`
 
-2. The `/target/path/` of **socket**, configure files is difference on Ubuntu and CentOS. **Be careful your Nginx setting !**
+1. The `/target/path/` of **socket**, configure files is difference on Ubuntu and CentOS. **Be careful your Nginx setting !**
 
- * Debian & Ubuntu:
-      * Configure:
+   * Debian & Ubuntu:
+     * Configure:
          * `/etc/php/7.0/fpm/php.ini`
          * `/etc/php/7.0/cli/php.ini`
      * Socket: `/var/run/php/php7.0-fpm.sock`
 
- * CentOS:
+   * CentOS:
      * Configure:
          * `/etc/php-fpm.d/www.conf`
          * `/etc/php.ini`
@@ -138,8 +138,8 @@ centos_nginx_fastcgi_server: "unix:{{ centos_php_fastcgi_listen }}"
 
 1. We add `apt_php_third_party_repo `variable for enable or disable the third-party repository (after v1.3.6).
 
- * `true`: use the third-party repository.
- * `false`: use the debian / ubuntu official repository.
+   * `true`: use the third-party repository.
+   * `false`: use the debian / ubuntu official repository.
 
 ## Dependencies
 
